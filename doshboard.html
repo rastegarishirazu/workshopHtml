@@ -17,8 +17,8 @@
 				<div class="name_pic">
 					<img src="29.png" alt="">
 					<i>Pouya Fekri</i>
-					<i style="color: black ; font-size: 10px">
-						Request for: <br><i style="color: black ; font-size: 8px;">Data base</i>
+					<i style="color: black ; font-size: 14px">
+						Request for: <br><i style="color: black ; font-size: 12px;">Data base</i>
 					</i> 
 					
 					
@@ -81,6 +81,11 @@
 	<div class="main">
 		<div class="main_mod">
 			<ul>
+				<script>
+					function getPaging(str) {
+						$("#loading-content").load("dataSearch.php?"+str, hideLoader);
+					}
+				</script>
 				<li class="mod active">Provider</li>
 				<li class="mod">Grader</li>
 				<li class="mod">User</li>
@@ -125,7 +130,7 @@
 		</div>
 		<div class="event">
 			<div class="img_event">
-				<div class="stutus active"></div>
+				<div class="stutus"></div>
 				<img src="event.png" alt="">
 			</div>
 			<div class="middle_event">
@@ -148,12 +153,12 @@
 				<br>
 				<br>
 				<br>
-				<b style="font-size: 12px ; color: green">Accept</b>
+				<b style="font-size: 12px ; color: red">Reject</b>
 			</div>
 		</div>
 		<div class="event">
 			<div class="img_event">
-				<div class="stutus active"></div>
+				<div class="stutus"></div>
 				<img src="event.png" alt="">
 			</div>
 			<div class="middle_event">
@@ -176,7 +181,7 @@
 				<br>
 				<br>
 				<br>
-				<b style="font-size: 12px ; color: green">Accept</b>
+				<b style="font-size: 12px ; color: red">Reject</b>
 			</div>
 		</div>
 		
