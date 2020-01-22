@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+  <title>Fash Institude</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+  <head>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top" id = "mainPage">
+      <div class="w3-bar w3-wide w3-padding w3-card-4">
+        <a href="#home" class="w3-bar-item w3-button"
+          ><b class="w3-purple">FI</b> Fash Institude</a
+        >
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <button
+            onclick="document.getElementById('id01').style.display='block'"
+            class="w3-button w3-purple w3-hover-purple w3-round-xxlarge"
+          >
+            <strong>Login/Signup</strong>
+          </button>
+
+          <div id="id01" class="w3-modal">
+            <div
+              class="w3-modal-content w3-card-4 w3-animate-zoom"
+              style="max-width:600px"
+            >
+              <div class="w3-center">
+                <br />
+                <span
+                  onclick="document.getElementById('id01').style.display='none'"
+                  class="w3-button w3-xlarge w3-hover-red w3-display-topright"
+                  title="Close Modal"
+                  >&times;</span
+                >
+                <img
+                  src="me avatar.svg"
+                  alt="Avatar"
+                  style="width:30%"
+                  class="w3-circle w3-margin-top"
+                />
+              </div>
+
+              <div class="w3-container" href="./signup.html" id="signinForm">
+                <div class="w3-section">
+                  <label><b>Username</b></label>
+                  <input
+                    class="w3-input w3-border w3-margin-bottom"
+                    type="text"
+                    placeholder="Enter Username or Email"
+                    name="usrname"
+                    v-model="email"
+                    required
+                  />
+                  <label><b>Password</b></label>
+                  <input
+                    class="w3-input w3-border"
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    required
+                    v-model="password"
+                  />
+                  <button
+                    class="w3-button w3-block w3-purple w3-section w3-padding"
+                    type="submit"
+                    v-on:click="login"
+                  >
+                    Login
+                  </button>
+                  <input
+                    class="w3-check w3-margin-top"
+                    type="checkbox"
+                    checked="checked"
+                    v-model="rememberMe"
+                  />
+                  Remember me
+                </div>
+              </div>
+
+              <div
+                class="w3-container w3-border-top w3-padding-16 w3-light-grey"
+              >
+                <button
+                  onclick="document.getElementById('id01').style.display='none'"
+                  type="button"
+                  class="w3-button w3-red"
+                >
+                  Cancel
+                </button>
+                <span class="w3-right w3-padding w3-hide-small">
+                  <a href="#">SIGNUP</a></span>
+              </div>
+            </div>
+          </div>
+          <a
+            href="#workshops"
+            class="w3-bar-item w3-button w3-round-xxlarge w3-hover-purple"
+            ><strong>Workshops</strong></a
+          >
+          <a
+            href="#about"
+            class="w3-bar-item w3-button w3-round-xxlarge w3-hover-purple"
+            ><strong>About</strong></a
+          >
+          <a
+            href="#contact"
+            class="w3-bar-item w3-button w3-round-xxlarge w3-hover-purple"
+            ><strong>Contact</strong></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header
+      class="w3-display-container w3-content w3-wide w3-margin-top"
+      style="max-width:1500px;"
+      id="home"
+    >
+      <img
+        class="w3-image"
+        src="Heading LD.jpg"
+        alt="Architecture"
+        width="100%"
+      />
+      <div class="w3-display-middle w3-margin-top w3-center">
+        <h1 class="w3-xxlarge w3-text-white w3-animate-opacity">
+          <span class="w3-padding w3-purple"><b>FI</b></span>
+          <span class="w3-hide-small w3-text-black">Fash Institude</span>
+        </h1>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="w3-content w3-padding" style="max-width:1564px">
+      <!-- Workshop Section -->
+      <div class="w3-container w3-padding-32" id="workshops">
+        <h3 class="w3-border-bottom w3-border-purple w3-padding-16">
+          Workshops
+        </h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-middle w3-display-hover w3-xlarge">
+              <button class="w3-button w3-purple w3-round-xxlarge">
+                Order
+              </button>
+            </div>
+            <img
+              src="Workshop sample HD.jpg"
+              alt="workshop"
+              style="width:100%"
+            />
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-middle w3-display-hover w3-xlarge">
+              <button class="w3-button w3-purple w3-round-xxlarge">
+                Order
+              </button>
+            </div>
+            <img
+              src="Workshop sample HD.jpg"
+              alt="workshop"
+              style="width:100%"
+            />
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-middle w3-display-hover w3-xlarge">
+              <button class="w3-button w3-purple w3-round-xxlarge">
+                Order
+              </button>
+            </div>
+            <img
+              src="Workshop sample HD.jpg"
+              alt="workshop"
+              style="width:100%"
+            />
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-middle w3-display-hover w3-xlarge">
+              <button class="w3-button w3-purple w3-round-xxlarge">
+                Order
+              </button>
+            </div>
+            <img
+              src="Workshop sample HD.jpg"
+              alt="workshop"
+              style="width:100%"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-middle w3-display-hover w3-xlarge">
+              <button class="w3-button w3-purple w3-round-xxlarge">
+                Order
+              </button>
+            </div>
+            <img
+              src="Workshop sample HD.jpg"
+              alt="workshop"
+              style="width:99%"
+            />
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-middle w3-display-hover w3-xlarge">
+              <button class="w3-button w3-purple w3-round-xxlarge">
+                Order
+              </button>
+            </div>
+            <img
+              src="Workshop sample HD.jpg"
+              alt="workshop"
+              style="width:99%"
+            />
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-middle w3-display-hover w3-xlarge">
+              <button class="w3-button w3-purple w3-round-xxlarge">
+                Order
+              </button>
+            </div>
+            <img
+              src="Workshop sample HD.jpg"
+              alt="workshop"
+              style="width:99%"
+            />
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-middle w3-display-hover w3-xlarge">
+              <button class="w3-button w3-purple w3-round-xxlarge">
+                Order
+              </button>
+            </div>
+            <img
+              src="Workshop sample HD.jpg"
+              alt="workshop"
+              style="width:99%"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="w3-container w3-padding-32" id="about">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+          About
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+      </div>
+
+      <div class="w3-row-padding w3-grayscale">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <img src="hamzeh avatar.svg" alt="Hamzeh" style="width:100%" />
+          <h3>Ali Hamzeh</h3>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>
+            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
+            sodales pellentesque elementum.
+          </p>
+          <p>
+            <button class="w3-button w3-purple w3-block">Contact</button>
+          </p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <img src="hamzeh avatar.svg" alt="Hossein" style="width:100%" />
+          <h3>Hossein Elahakbari</h3>
+          <p class="w3-opacity">Backend</p>
+          <p>
+            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
+            sodales pellentesque elementum.
+          </p>
+          <p>
+            <button class="w3-button w3-purple w3-block">Contact</button>
+          </p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <img src="hamzeh avatar.svg" alt="Pouya" style="width:100%" />
+          <h3>Pouya Fekri</h3>
+          <p class="w3-opacity">Backend</p>
+          <p>
+            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
+            sodales pellentesque elementum.
+          </p>
+          <p>
+            <button class="w3-button w3-purple w3-block">Contact</button>
+          </p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <img src="hamzeh avatar.svg" alt="Saman" style="width:100%" />
+          <h3>Saman shahhosseini</h3>
+          <p class="w3-opacity">Frontend</p>
+          <p>
+            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
+            sodales pellentesque elementum.
+          </p>
+          <p>
+            <button class="w3-button w3-purple w3-block">Contact</button>
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="w3-container w3-padding-32" id="contact">
+        <h3 class="w3-border-bottom w3-border-purple w3-padding-16">
+          Contact
+        </h3>
+        <p>Lets get in touch and talk about your next project.</p>
+        <form action="/action_page.php" target="_blank">
+          <input
+            class="w3-input w3-border"
+            type="text"
+            placeholder="Name"
+            required
+            name="Name"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Email"
+            required
+            name="Email"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Subject"
+            required
+            name="Subject"
+          />
+          <input
+            class="w3-input w3-section w3-border"
+            type="text"
+            placeholder="Comment"
+            required
+            name="Comment"
+          />
+          <button class="w3-button w3-purple w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
+
+      <!-- Image of institude location -->
+      <div class="w3-container">
+        <img src="Map.jpg" class="w3-image" style="width:100%" />
+      </div>
+
+      <!-- End page content -->
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="w3-center w3-purple w3-padding-16"
+      style="border-radius: 245px 245px 0 0;"
+    >
+      <p>
+        Powered by
+        <a
+          href="https://www.google.com"
+          title="Fash Institude"
+          target="_blank"
+          class="w3-hover-text-black"
+          >Fash Institude</a
+        >
+      </p>
+    </footer>
+    <script src="signin.js"></script>
+    <script src="mainPage.js"></script>
+  </body>
+</html>
