@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <head>
     <meta charset="UTF-8"/>
@@ -115,40 +115,40 @@
 
     <div class="needs-validation" novalidate id="myForm">
         <div class="form-group">
-            <label for="First Name">
-                <label for="fname"><b>First Name</b></label>
+            <label for="first_name">
+                <label for="first_name"><b>First Name</b></label>
                 <input id="first_name" type="text" class="form-control" placeholder="Enter First Name" name="firstName"
                        required v-model="firstName" v-on:keyup.enter="logName">
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
 
-                <label for="Last Name">
-                    <label for="lname"><b>Last Name</b></label>
+                <label for="last_name">
+                    <label for="last_name"><b>Last Name</b></label>
                     <input id="last_name" type="text" class="form-control" placeholder="Enter Last Name" name="lastName"
                            required v-model="lastName" v-on:keyup.enter="logLastName">
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
 
-                    <label for="User Name">
-                        <label for="uname"><b>User Name</b></label>
+                    <label for="username">
+                        <label for="username"><b>User Name</b></label>
                         <input id="username" type="text" class="form-control" placeholder="Enter User Name"
                                name="username" required v-model="username">
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
 
-                        <label for="email"><b>Email</b></label>
+                        <label for="email_address"><b>Email</b></label>
                         <input id="email_address" type="text" class="form-control" placeholder="Enter Email"
                                name="email" required v-model="email">
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
 
-                        <label for="psw"><b>Password</b></label>
+                        <label for="password"><b>Password</b></label>
                         <input id="password" type="password" class="form-control" placeholder="Enter Password"
                                name="hashedPassword" required @input="checkpasswd" v-model="hashedPassword">
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
 
-                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                        <label for="repeat_password"><b>Repeat Password</b></label>
                         <input id="repeat_password" type="password" class="form-control" class="form-control"
                                placeholder="Repeat Password" required @input="checkpasswd" v-model="hashedPassword2">
                         <div class="valid-feedback">Valid.</div>
