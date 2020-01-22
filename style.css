@@ -172,6 +172,7 @@ a{
 	-o-transition: all .2s ease-in-out;
 }
 .shutdown:hover{
+	cursor: pointer;
 	display: block;
 	width: 80%;
 	height: auto;
@@ -224,6 +225,10 @@ a{
 	margin-left: 10px;
 	
 }
+.btn{
+	display: none;
+	
+}
 .discrib{
 	float: left;
 	width: 98%;
@@ -265,6 +270,7 @@ a{
 	-o-transition: all .2s ease-in-out;
 }
 #reject:hover{
+	cursor: pointer;
 	background: #FF686A;
 	border-color: #FF686A;
 	color: darkred;
@@ -283,6 +289,7 @@ a{
 	-o-transition: all .2s ease-in-out;
 }
 #accept:hover{
+	cursor: pointer;
 	background:#004E00 ;
 	border-color:#004E00 ;
 	color: #fff;
@@ -323,6 +330,7 @@ a{
 	-o-transition: all .2s ease-in-out;
 }
 .mod.active:hover{
+	cursor: pointer;
 	background: #6666ff;
 	box-shadow: 0px 0px 4px 2px #6666ff;
 	color: #fff;
@@ -332,6 +340,7 @@ a{
 	-o-transition: all .2s ease-in-out;
 }
 .mod:hover{
+	cursor: pointer;
 	background: #9999ff;
 	box-shadow: 0px 0px 4px 2px #6666ff;
 	transition: all .2s ease-in-out;
@@ -367,6 +376,7 @@ a{
 	-o-transition: all .2s ease-in-out;
 }
 .when:hover{
+	cursor: pointer;
 	background: #9999ff;
 	transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
@@ -390,11 +400,21 @@ a{
 	width: 15%;
 	height: 80%;
 }
-.stutus{
+.stutus.active{
 	position: absolute;
 	width: 5%;
 	height: 80%;
 	background: green;
+	margin-right: 30px;
+	top: 10%;
+	border-radius: 0 3px 3px 0;
+}
+}
+.stutus{
+	position: absolute;
+	width: 5%;
+	height: 80%;
+	background: red;
 	margin-right: 30px;
 	top: 10%;
 	border-radius: 0 3px 3px 0;
