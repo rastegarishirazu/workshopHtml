@@ -8,14 +8,14 @@ var dashboard = new Vue({
         getUser:function(hello) {
             
         }
-        // ,
+        ,
         // change:function(){
         //     this.name = this.hello
         // }
     },
     beforeMount : function(){
         var hello
-        axios.get('http://172.16.205.171:8080/api/v1/users/token',{
+        axios.get('http://127.0.0.1:8080/api/v1/users/token',{
             headers: {
                 'Content-type': 'application/json',
                 'Authorization': document.cookie
@@ -35,7 +35,7 @@ var dashboard = new Vue({
 });
 function getUser(hello){
     // alert(hello)
-    axios.get('http://172.16.205.171:8080/api/v1/users/'+hello,{
+    axios.get('http://localhost:8080/api/v1/users/'+hello,{
         headers: {
             'Content-type': 'application/json',
             'Authorization': document.cookie
