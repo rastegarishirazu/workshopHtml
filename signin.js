@@ -7,6 +7,7 @@ new Vue({
     },
     methods: {
         login:function(){
+          // alert("hello");
           //console.log(this.rememberMe);
           axios.post('http://localhost:8080/api/v1/users/login', {
             email: this.email,
@@ -17,21 +18,21 @@ new Vue({
             'Content-type': 'application/json',
             }
           }).then(function (response) {
-            document.cookie = "token" + "=" + response.data.token + ";";
-            console.log(response.data);
+            window.location.href = 'doshboard.html';
+            document.cookie = response.data.token;
+            console.log(document.cookie);
           })
           .catch(function (error) {
-            // handle error
             console.log(error);
           })
         },
         getCookie:function(){
-          alert(document.cookie);
+          //console.log(document.cookie)
       }
         
     },
     beforeMount : function(){
-        this.getCookie()
+        // this.getUserByToken()
     }
 
   });

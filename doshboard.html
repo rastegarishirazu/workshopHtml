@@ -1,14 +1,13 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
 	<title>fekri</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="css/all.css">
 	<link href="https://fonts.googleapis.com/css?family=Paytone+One&display=swap" rel="stylesheet">
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="dashboard.js"></script>>
 </head>
 
 <body>
@@ -80,7 +79,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="main" id="username">
+	<div class="main">
 		<div class="main_mod">
 			<ul>
 				<li class="mod active">Provider</li>
@@ -88,7 +87,9 @@
 				<li class="mod">User</li>
 			</ul>
 		</div>
-		<h3>Hello {{ username1 }}!</h3>
+		<div id="username" v-bind="name">
+			<h3>Hello {{ name }}!</h3>
+		</div>
 		<h4>Your Events</h4>
 
 
@@ -190,6 +191,6 @@
 		<div class="vertical_text"><h3>Dashboard</h3></div>
 		<div class="shutdown"> <i class="fas fa-power-off fa-4x"></i></div>
 	</div>
-	
+	<script src="dashboard.js"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
-new veu({
+new Vue({
     el : "#mainPage",
     data:{
         hascooki:false
     },
     methods:{
         getCookie:function(){
-            alert(document.cookie);
+            //alert(document.cookie);
         }
     },
     beforeMount : function(){
