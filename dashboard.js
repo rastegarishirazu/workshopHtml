@@ -1,3 +1,17 @@
+var powerOff = new Vue({
+    el:'#power-off',
+    data:{
+        name:'',
+        hello:''
+    },
+    methods:{
+        logOut:function() {
+            document.cookie = ''
+            window.location.href = 'index.html';
+        }
+    }
+
+});
 var dashboard = new Vue({
     el:'#username',
     data:{
@@ -5,13 +19,6 @@ var dashboard = new Vue({
         hello:''
     },
     methods:{
-        getUser:function(hello) {
-            
-        }
-        ,
-        // change:function(){
-        //     this.name = this.hello
-        // }
     },
     beforeMount : function(){
         var hello
