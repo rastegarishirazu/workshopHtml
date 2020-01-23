@@ -1,16 +1,21 @@
-new Vue({
+var dashboard = new Vue({
     el:'#username',
     data:{
-        name:''
+        name:'',
+        hello:''
     },
     methods:{
         getUser:function(hello) {
             
         }
+        // ,
+        // change:function(){
+        //     this.name = this.hello
+        // }
     },
     beforeMount : function(){
         var hello
-        axios.get('http://127.0.0.1:8080/api/v1/users/token',{
+        axios.get('http://172.16.205.171:8080/api/v1/users/token',{
             headers: {
                 'Content-type': 'application/json',
                 'Authorization': document.cookie
@@ -18,23 +23,25 @@ new Vue({
         }).then(function (response){
             hello = response.data.id
             console.log(hello)
-            getUser(hello)
+            this.hello = getUser(hello)
         }).catch(function (error) {
             console.log(error)
         })
     },
     mounted:function(){
-        getUser(hello)
-    }
+
+    },
+
 });
 function getUser(hello){
-    alert(hello)
-    axios.get('http://localhost:8080/api/v1/users/'+hello,{
+    // alert(hello)
+    axios.get('http://172.16.205.171:8080/api/v1/users/'+hello,{
         headers: {
             'Content-type': 'application/json',
             'Authorization': document.cookie
     }}).then( function (response) {
-        this.name = response.data.username,
+        dashboard.name = response.data.username,
+        alert(this.name);
         console.log(response.data.username)
     })
     .catch(function (error) {
