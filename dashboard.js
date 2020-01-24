@@ -1,3 +1,13 @@
+var grader = document.getElementsByClassName('grader');
+var user = document.getElementsByClassName('user');
+var provider = document.getElementsByClassName('provider');
+var participant = document.getElementsByClassName('participant');
+var qgrader = document.querySelector('.grader');
+var quser = document.querySelector('.user');
+var qprovider = document.querySelector('.provider');
+var qparticipant = document.querySelector('.participant');
+
+
 var powerOff = new Vue({
     el:'#power-off',
     data:{
@@ -42,9 +52,9 @@ var dashboard = new Vue({
 var role = new Vue({
     el:'#roles',
     data:{
-        hasGraderRole:false,
-        hasProviderRole:false,
-        hasParticipant:false
+        hasGraderRole:true,
+        hasProviderRole:true,
+        hasParticipant:true
     },
     methods:{
     },
@@ -70,15 +80,18 @@ function getUserRole(id){
             'Content-type': 'application/json',
             'Authorization': document.cookie
     }}).then( function (response) {
+        grader[0].style.display = 'none'
+        provider[0].style.display = 'none'
+        participant[0].style.display = 'none'
         for (var key in response.data._embedded) {
             if (response.data._embedded.hasOwnProperty(key)) {
+                
                 if(key == "graders"){
-    
-                    role.hasGraderRole = true;
+                    grader[0].style.display = 'block'
                 }else if(key == "organizers"){
-                    role.hasProviderRole = true;
+                    grader[0].style.display = 'block'
                 }else if(key == "participants"){
-                    role.hasParticipant =true;
+                    grader[0].style.display = 'block'
                 }
             }
         }
@@ -88,36 +101,37 @@ function getUserRole(id){
     })
     
 }
+function a(){
+    
+}
 
-
-
-var grader = document.getElementsByClassName('grader');
-var user = document.getElementsByClassName('user');
-var provider = document.getElementsByClassName('provider');
-var qgrader = document.querySelector('.grader');
-var quser = document.querySelector('.user');
-var qprovider = document.querySelector('.provider');
 
 
 function no_active(){
 	
-		grader[0].classList.remove('active');
-		user[0].classList.remove('active');
-		provider[0].classList.remove('active');
-	
+    grader[0].classList.remove('active');
+    user[0].classList.remove('active');
+    provider[0].classList.remove('active');
+    participant[0].classList.remove('active');
+
 }
 qgrader.addEventListener('click' , function(e){
-	e.preventDefault();
-	no_active();
-	grader[0].classList.add('active');
+e.preventDefault();
+no_active();
+grader[0].classList.add('active');
 })
 quser.addEventListener('click' , function(e){
-	e.preventDefault();
-	no_active();
-	user[0].classList.add('active');
+e.preventDefault();
+no_active();
+user[0].classList.add('active');
 })
 qprovider.addEventListener('click' , function(e){
-	e.preventDefault();
-	no_active();
-	provider[0].classList.add('active');
+e.preventDefault();
+no_active();
+provider[0].classList.add('active');
+})
+qparticipant.addEventListener('click' , function(e){
+e.preventDefault();
+no_active();
+participant[0].classList.add('active');
 })
