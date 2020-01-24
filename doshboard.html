@@ -80,11 +80,11 @@
 		</div>
 	</div>
 	<div class="main">
-		<div class="main_mod" , id="roles">
+		<div class="main_mod" id="roles">
 			<ul>
 				<li v-if="hasProviderRole" class="mod active">Provider</li>
-				<li v-if="hasProviderRole" class="mod">Grader</li>
-				<li class="mod">Participant</li>
+				<li v-if="hasGraderRole" class="mod">Grader</li>
+				<li v-if="hasParticipant" class="mod">Participant</li>
 				<li class="mod">User</li>
 			</ul>
 		</div>

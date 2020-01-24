@@ -9,18 +9,6 @@ var powerOff = new Vue({
         }
     }
 });
-var role = new Vue({
-    el:'#roles',
-    data:{
-        hasGraderRole:false,
-        hasProviderRole:false,
-        hasParticipant:false
-    },
-    methods:{
-    },
-    beforeMount : function(){
-    }
-});
 var dashboard = new Vue({
     el:'#username',
     data:{
@@ -41,7 +29,7 @@ var dashboard = new Vue({
             id = response.data
             this.id = id
             getUser(id)
-            role.getUser(id)
+            getUserRole(id)
         }).catch(function (error) {
             console.log(error)
             // window.location.href = 'index.html';
@@ -49,6 +37,18 @@ var dashboard = new Vue({
     },
     mounted:function(){
         
+    }
+});
+var role = new Vue({
+    el:'#roles',
+    data:{
+        hasGraderRole:false,
+        hasProviderRole:false,
+        hasParticipant:false
+    },
+    methods:{
+    },
+    beforeMount : function(){
     }
 });
 function getUser(id){
@@ -65,7 +65,6 @@ function getUser(id){
     })
 }
 function getUserRole(id){
-    alert(id);
     axios.get('http://localhost:8080/api/v1/users/'+id+'/roles',{
         headers: {
             'Content-type': 'application/json',
@@ -74,6 +73,7 @@ function getUserRole(id){
         for (var key in response.data._embedded) {
             if (response.data._embedded.hasOwnProperty(key)) {
                 if(key == "graders"){
+    
                     role.hasGraderRole = true;
                 }else if(key == "organizers"){
                     role.hasProviderRole = true;
