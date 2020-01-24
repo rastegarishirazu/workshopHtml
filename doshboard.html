@@ -82,9 +82,9 @@
 	<div class="main">
 		<div class="main_mod" id="roles">
 			<ul>
-				<li v-if="hasProviderRole" class="mod active">Provider</li>
-				<li v-if="hasGraderRole" class="mod">Grader</li>
-				<li v-if="hasParticipant" class="mod">Participant</li>
+				<li v-if="hasProviderRole" class="provider active">Provider</li>
+				<li v-if="hasGraderRole" class="grader">Grader</li>
+				<li v-if="hasParticipant" class="provider">Participant</li>
 				<li class="mod">User</li>
 			</ul>
 		</div>
@@ -194,5 +194,6 @@
 		<div id = "power-off" class="shutdown" v-on:click="logOut"> <i class="fas fa-power-off fa-4x" ></i></div>
 	</div>
 	<script src="dashboard.js"></script>
+	<script language="Javascript" type="text/javascript" src="script.js"></script>
 </body>
 </html>
