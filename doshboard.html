@@ -80,14 +80,15 @@
 		</div>
 	</div>
 	<div class="main">
-		<div class="main_mod">
+		<div class="main_mod" , id="roles">
 			<ul>
-				<li class="mod active">Provider</li>
-				<li class="mod">Grader</li>
+				<li v-if="hasProviderRole" class="mod active">Provider</li>
+				<li v-if="hasProviderRole" class="mod">Grader</li>
+				<li class="mod">Participant</li>
 				<li class="mod">User</li>
 			</ul>
 		</div>
-		<div id="username" v-bind="name">
+		<div id="username" >
 			<h3>Hello {{ name }}!</h3>
 			<!-- <component : is = ></component> -->
 		</div>
@@ -97,7 +98,7 @@
 		<div class="whens">
 			<ul>
 				<li class="when active">now</li>
-				<li class="when">future</li>
+					<li class="when">future</li>
 				<li class="when">past</li>
 			</ul>
 		</div>
