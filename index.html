@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <title>Fash Institude</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	<link rel="stylesheet" href="style2.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Fash Institude</title>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <!-- Navbar (sit on top) -->
-    <div class="w3-top" id = "mainPage">
-      <div class="w3-bar w3-wide w3-padding w3-card-4">
+    <div class="w3-top">
+      <div class="w3-bar w3-wide w3-white w3-padding w3-card-4">
         <a href="#home" class="w3-bar-item w3-button"
           ><b class="w3-purple">FI</b> Fash Institude</a
         >
         <!-- Float links to the right. Hide them on small screens -->
-        <div class="w3-right w3-hide-small">
+        <div class="w3-right w3-hide-small" id="login">
           <button
-            onclick="document.getElementById('id01').style.display='block'"
+            onclick="document.getElementById('LOGIN').style.display='block'"
             class="w3-button w3-purple w3-hover-purple w3-round-xxlarge"
           >
             <strong>Login/Signup</strong>
           </button>
 
-          <div id="id01" class="w3-modal">
+          <div id="LOGIN" class="w3-modal">
             <div
               class="w3-modal-content w3-card-4 w3-animate-zoom"
               style="max-width:600px"
@@ -33,9 +34,9 @@
               <div class="w3-center">
                 <br />
                 <span
-                  onclick="document.getElementById('id01').style.display='none'"
+                  onclick="document.getElementById('LOGIN').style.display='none'"
                   class="w3-button w3-xlarge w3-hover-red w3-display-topright"
-                  title="Close Modal"
+                  title="Close"
                   >&times;</span
                 >
                 <img
@@ -46,16 +47,16 @@
                 />
               </div>
 
-              <div class="w3-container" href="./signup.html" id="signinForm">
+              <div class="w3-container"  id="signinForm">
                 <div class="w3-section">
                   <label><b>Username</b></label>
                   <input
                     class="w3-input w3-border w3-margin-bottom"
                     type="text"
-                    placeholder="Enter Username or Email"
+                    placeholder="Enter Username"
                     name="usrname"
-                    v-model="email"
                     required
+                    v-model="email"
                   />
                   <label><b>Password</b></label>
                   <input
@@ -68,8 +69,7 @@
                   />
                   <button
                     class="w3-button w3-block w3-purple w3-section w3-padding"
-                    type="submit"
-                    v-on:click="login"
+                    type="submit" v-on:click="login"
                   >
                     Login
                   </button>
@@ -87,17 +87,202 @@
                 class="w3-container w3-border-top w3-padding-16 w3-light-grey"
               >
                 <button
-                  onclick="document.getElementById('id01').style.display='none'"
+                  onclick="document.getElementById('LOGIN').style.display='none'"
                   type="button"
                   class="w3-button w3-red"
                 >
                   Cancel
                 </button>
-                <span class="w3-right w3-padding w3-hide-small">
-                  <a href="#">SIGNUP</a></span>
+                <button
+                  onclick="document.getElementById('ForgetPass').style.display='block'; document.getElementById('LOGIN').style.display='none'"
+                  class="w3-button w3-purple w3-hover-purple w3-round-xxlarge"
+                >
+                  <strong>Forget Password</strong>
+                </button>
+                <button
+                  onclick="document.getElementById('SIGNUP').style.display='block'; document.getElementById('LOGIN').style.display='none'"
+                  class="w3-button w3-purple w3-hover-purple w3-round-xxlarge"
+                >
+                  <strong>Signup</strong>
+                </button>
               </div>
             </div>
           </div>
+          <!--forget password-->
+          <div id="ForgetPass" class="w3-modal">
+            <div
+              class="w3-modal-content w3-card-4 w3-animate-zoom"
+              style="max-width:600px"
+            >
+              <div class="w3-center">
+                <br />
+                <span
+                  onclick="document.getElementById('ForgetPass').style.display='none'"
+                  class="w3-button w3-xlarge w3-hover-red w3-display-topright"
+                  title="Close"
+                  >&times;</span
+                >
+                <img
+                  src="me avatar.svg"
+                  alt="Avatar"
+                  style="width:30%"
+                  class="w3-circle w3-margin-top"
+                />
+              </div>
+
+              <div class="w3-container" >
+                <div class="w3-section">
+                  <label><b>Username</b></label>
+                  <input
+                    class="w3-input w3-border w3-margin-bottom"
+                    type="text"
+                    placeholder="Enter Username"
+                    name="usrname"
+                    required
+                  />
+                  <label><b>Email</b></label>
+                  <input
+                    class="w3-input w3-border"
+                    type="email"
+                    placeholder="Enter Email"
+                    name="email"
+                    required
+                  />
+                  <button
+                    class="w3-button w3-block w3-purple w3-section w3-padding"
+                    type="submit"
+                  >
+                    Recover Password
+                  </button>
+                </div>
+              </div>
+              <div
+                class="w3-container w3-border-top w3-padding-16 w3-light-grey"
+              >
+                <button
+                  onclick="document.getElementById('ForgetPass').style.display='none'"
+                  type="button"
+                  class="w3-button w3-red"
+                >
+                  Cancel
+                </button>
+                <button
+                  onclick="document.getElementById('SIGNUP').style.display='block'; document.getElementById('ForgetPass').style.display='none'"
+                  class="w3-button w3-purple w3-hover-purple w3-round-xxlarge"
+                >
+                  <strong>Signup</strong>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--signup-->
+          <div id="SIGNUP" class="w3-modal">
+            <div
+              class="w3-modal-content w3-card-4 w3-animate-zoom"
+              style="max-width:600px"
+            >
+              <div class="w3-center">
+                <br />
+                <span
+                  onclick="document.getElementById('SIGNUP').style.display='none'"
+                  class="w3-button w3-xlarge w3-hover-red w3-display-topright"
+                  title="Close"
+                  >&times;</span
+                >
+                <img
+                  src="me avatar.svg"
+                  alt="Avatar"
+                  style="width:15%"
+                  class="w3-circle w3-margin-top"
+                />
+              </div>
+
+              <div class="w3-container" id="myForm">
+                <div class="w3-section">
+                  <label><b>First name</b></label>
+                  <input
+                    class="w3-input w3-border w3-margin-bottom"
+                    type="text"
+                    placeholder="Enter your First name"
+                    name="frstname"
+                    required
+                    v-model="firstName"
+                  />
+                  <label><b>Last name</b></label>
+                  <input
+                    class="w3-input w3-border w3-margin-bottom"
+                    type="text"
+                    placeholder="Enter your Last name"
+                    name="lstname"
+                    required
+                    v-model="lastName"
+                  />
+                  <label><b>Username</b></label>
+                  <input
+                    class="w3-input w3-border w3-margin-bottom"
+                    type="text"
+                    placeholder="Enter Username"
+                    name="usrname"
+                    required
+                    v-model="username"
+                  />
+                  <label><b>Email</b></label>
+                  <input
+                    class="w3-input w3-border w3-margin-bottom"
+                    type="text"
+                    placeholder="Enter valid Email"
+                    name="email"
+                    required
+                    v-model="email"
+                  />
+                  <label><b>Password</b></label>
+                  <input
+                    class="w3-input w3-border"
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    required
+                    v-model="hashedPassword"
+                  />
+                  <label><b>Confirm Password</b></label>
+                  <input
+                    class="w3-input w3-border"
+                    type="password"
+                    placeholder="confirm Password"
+                    name="conf_psw"
+                    required
+                    @input="checkpasswd" v-model="hashedPassword2"
+                  />
+                  <button v-if="!unmatchedPass"
+                    class="w3-button w3-block w3-purple w3-section w3-padding"
+                    type="submit" v-on:click="submit"
+                  >
+                    Signup
+                  </button>
+                  <button v-if="unmatchedPass" type="submit" class="w3-button w3-block w3-purple w3-section w3-padding">Sign Up</button>
+                </div>
+              </div>
+
+              <div
+                class="w3-container w3-border-top w3-padding-16 w3-light-grey"
+              >
+                <button
+                  onclick="document.getElementById('SIGNUP').style.display='none'"
+                  type="button"
+                  class="w3-button w3-red"
+                >
+                  Cancel
+                </button>
+                <button
+                  onclick="document.getElementById('LOGIN').style.display='block'; document.getElementById('SIGNUP').style.display='none'"
+                  class="w3-button w3-purple w3-hover-purple w3-round-xxlarge"
+                >
+                  <strong>Login</strong>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--end signup-->
           <a
             href="#workshops"
             class="w3-bar-item w3-button w3-round-xxlarge w3-hover-purple"
@@ -399,6 +584,6 @@
       </p>
     </footer>
     <script src="signin.js"></script>
-    <!-- <script src="mainPage.js"></script> -->
+    <script src="signup.js"></script>
   </body>
 </html>

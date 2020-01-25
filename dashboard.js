@@ -71,6 +71,7 @@ function getUserRole(id){
         headers: {
             'Content-type': 'application/json',
             'Authorization': document.cookie
+            
     }}).then( function (response) {
         // grader[0].style.display = 'none'
         // provider[0].style.display = 'none'
