@@ -17,7 +17,7 @@ new Vue({
             'Content-type': 'application/json',
             }
           }).then(function (response) {
-            window.location.href = 'doshboard.html';
+            window.location.href = 'http://registerhere.ir';
             document.cookie = response.data.token;
             console.log(document.cookie);
           })

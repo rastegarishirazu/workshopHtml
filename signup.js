@@ -34,7 +34,7 @@ new Vue({
           'Content-type': 'application/json',
           }
         }).then(function (response) {
-          window.location.href = 'index.html';
+          window.location.href = 'http://registerhere.ir';
           console.log(response);
         })
         .catch(function (error) {

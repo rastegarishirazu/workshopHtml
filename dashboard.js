@@ -7,7 +7,7 @@ var powerOff = new Vue({
     methods:{
         logOut:function() {
             document.cookie = ''
-            window.location.href = 'index.html';
+            window.location.href = 'http://registerhere.ir';
         }
     }
 });
