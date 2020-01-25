@@ -23,7 +23,7 @@ new Vue({
           this.unmatchedPass = false;
       },
       submit:function(){
-        axios.post('http://:8085/api/v1/users', {
+        axios.post('http://registerhere.ir:8085/api/v1/users', {
           firstName: this.firstName,
           lastName: this.lastName,
           email: this.email,

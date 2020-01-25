@@ -22,7 +22,7 @@ var dashboard = new Vue({
     },
     beforeMount : function(){
         var id
-        axios.get('http://:8085/api/v1/users/token',{
+        axios.get('http://registerhere.ir:8085/api/v1/users/token',{
             headers: {
                 'Content-type': 'application/json',
                 'Authorization': document.cookie
@@ -54,7 +54,7 @@ var role = new Vue({
     }
 });
 function getUser(id){
-    axios.get('http://:8085/api/v1/users/'+id,{
+    axios.get('http://registerhere.ir:8085/api/v1/users/'+id,{
         headers: {
             'Content-type': 'application/json',
             'Authorization': document.cookie
@@ -67,7 +67,7 @@ function getUser(id){
     })
 }
 function getUserRole(id){
-    axios.get('http://:8085/api/v1/users/'+id+'/roles',{
+    axios.get('http://registerhere.ir:8085/api/v1/users/'+id+'/roles',{
         headers: {
             'Content-type': 'application/json',
             'Authorization': document.cookie

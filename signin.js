@@ -8,7 +8,7 @@ new Vue({
     methods: {
         login:function(){
           //console.log(this.rememberMe);
-          axios.post('http:/:8085/api/v1/users/login', {
+          axios.post('http://registerhere.ir:8085/api/v1/users/login', {
             email: this.email,
             password: this.password,
             rememberMe: this.rememberMe
